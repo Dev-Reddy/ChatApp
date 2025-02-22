@@ -15,11 +15,13 @@ dotenv.config();
 
 const PORT = process.env.PORT;
 
+const CLIENT_URL = process.env.CLIENT_URL;
+
 app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ["https://messenger07.vercel.app", "http://localhost:5173"], // Allow frontend
+    origin: [CLIENT_URL, "http://localhost:5173"], // Allow frontend
     credentials: true, // Allow cookies
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],

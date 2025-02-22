@@ -31,7 +31,7 @@ app.get("/", (req, res) => {
   return res
     .status(200)
     .send(
-      "Welcome to the messenger backend! But hey, you are not supposed to be here!!! How did you get here? Please contact me Mr. Hacker!"
+      "Welcome to the messenger backend! But hey, you are not supposed to be here!!! How did you get here? Please contact me you amazing hacker and teach me how did you do it."
     );
 });
 

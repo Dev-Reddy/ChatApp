@@ -10,7 +10,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: [CLIENT_URL, "http://localhost:5173"],
+    origin: "*",
     methods: ["GET", "POST"],
     credentials: true, // Allow cookies
   },

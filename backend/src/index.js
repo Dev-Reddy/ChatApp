@@ -3,8 +3,6 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 
-import path from "path";
-
 import { connectDB } from "./lib/db.js";
 
 import authRoutes from "./routes/auth.routes.js";
@@ -15,16 +13,12 @@ dotenv.config();
 
 const PORT = process.env.PORT;
 
-const CLIENT_URL = process.env.CLIENT_URL;
-
 app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "*", // Allow frontend
-    credentials: true, // Allow cookies
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+    origin: process.env.CLIENT_URL || "http://localhost:5173",
+    credentials: true,
   })
 );
 
